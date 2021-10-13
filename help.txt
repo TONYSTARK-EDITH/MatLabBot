@@ -1,0 +1,20 @@
+This bot allows you to generate the graph
+and provide you the image of the graph
+
+If you want to terminate a particular function
+enter stop
+
+Usage:
+/graph - Will generate a 2D plot
+
+/piegraph - Will generate a pie chart
+
+/histgraph - Will generate a histogram
+
+/scatter - Will generate a scatter plot
+
+/3dwireframe - Will generate a 3D wireframe graph
+
+/3dcontour - Will generate a 3D Contour graph
+
+/3dsurface - Will generate a 3D Surface graph
