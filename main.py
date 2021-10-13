@@ -13,8 +13,8 @@ BOT_NAME = "BOT_NAME"  # Secret BOT NAME
 x = []  # X axis list
 y = []  # Y axis list
 z = []  # Z axis list
-string_x = [] # X axis list
-string_y = [] # Y axis
+string_x = []  # X axis list
+string_y = []  # Y axis
 CHAT_BOT = ChatBot("Chatterbot", storage_adapter="chatterbot.storage.SQLStorageAdapter")  # Start the ai of the bot
 trainer = ChatterBotCorpusTrainer(CHAT_BOT)  # Initializing the trainer for the training of the bot
 trainer.train("chatterbot.corpus.english")  # Train the bot with english language with the trainer
@@ -54,7 +54,7 @@ def different_color_generator(size: int) -> list:
     """
 
     colors = []  # list to store the random rgba colors
-    for i in range(size):
+    for _ in range(size):
         # RGBA values will be between 0 and 1
         # append it to the list colors
         colors.append((random.uniform(random.uniform(0, 1), random.uniform(0, 1)),
@@ -325,7 +325,8 @@ def setter(message, nxt_func, same_func, which="x", nxt_which="Y", normal=False)
         code, msg = format_string_numpy_array(txt, which)
         if code:
             if "generate" not in nxt_func.__name__:
-                rep = bot.send_message(message.chat.id, f"set {nxt_which}\nValues so far :\nX = {string_x}\nY = {string_y}")
+                rep = bot.send_message(message.chat.id,
+                                       f"set {nxt_which}\nValues so far :\nX = {string_x}\nY = {string_y}")
                 bot.register_next_step_handler(rep, nxt_func)
             else:
                 if not normal:
